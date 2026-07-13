@@ -10,6 +10,7 @@ using System.Security.Claims;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 var cs = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Thiếu DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(o => o.UseNpgsql(cs));
 builder.Services.AddHttpContextAccessor();
