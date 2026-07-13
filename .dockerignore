@@ -1,0 +1,10 @@
+bin/
+obj/
+publish_azure/
+**/bin/
+**/obj/
+.vs/
+.vscode/
+*.user
+Dockerfile
+.dockerignore
